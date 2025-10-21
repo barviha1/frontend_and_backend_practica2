@@ -242,7 +242,7 @@
                         </div>
 
                         <div class="modal-actions">
-                            <button type="submit" class="btn btn-secondary">Отмена</button>
+                            <button type="button" class="btn btn-secondary" id="cancelBtn">Отмена</button>
                             <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
                         </div>
                     </form>
@@ -278,6 +278,10 @@
                     if (event.key === 'Enter' && event.target.type !== 'textarea') {
                         event.preventDefault();
                     }
+                });
+                document.getElementById('cancelBtn').addEventListener('click', function() {
+                const modal = document.getElementById('contactModal');
+                modal.close();
                 });
             </script>
         </div>
