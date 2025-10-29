@@ -11,6 +11,10 @@
     <header class="header">
       <h1 class="header__title">Новости</h1>
     </header>
+    <button id="theme-toggle" class="theme-toggle">
+        <span class="theme-toggle__sun">☀️</span>
+        <span class="theme-toggle__moon">🌙</span>
+    </button>
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__item">
@@ -68,6 +72,16 @@
       </section>
     </main>
   </div>
+  <script>
+    const themeButton = document.getElementById('theme-toggle');
+    themeButton.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+    document.documentElement.removeAttribute('data-theme');
+    } else {
+    document.documentElement.setAttribute('data-theme', 'dark');}
+    });
+  </script>
 </body>
     <footer class="footer">
       <p class="footer__text">&copy; 2025 Новостной портал. Все права защищены.</p>

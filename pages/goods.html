@@ -7,10 +7,14 @@
         <link rel="stylesheet" href="../style/styles.css">
     </head>
     <body>
-        <div class="page-container">
+        <div class="page">
             <header class="header">
                 <h1>Наши товары</h1>
             </header>
+            <button id="theme-toggle" class="theme-toggle">
+                <span class="theme-toggle__sun">☀️</span>
+                <span class="theme-toggle__moon">🌙</span>
+            </button>
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item">
@@ -35,18 +39,20 @@
                     <h2 class="section__title">Каталог товаров</h2>
                     <p class="section__description">Мы предлагаем широкий ассортимент качественных товаров по доступным ценам</p>
                     <div class="products__grid">
-                        <article class="product__card">
+                        <article class="product__card product-card--selected">
+                            <div class="product-card__badge">СКИДКА</div>
                             <div class="product__image--container">
-                                <img class="product__image" src="../images/goods1.png" alt="Современный ноутбук для работы и игр">
+                                <img class="product__image" src="../images/goods1.png" alt="Современный компьютер для работы и игр">
                             </div>
                             <div class="product__info">
                                 <h3 class="product__name">Производительный компьютер</h3>
                                 <p class="product__description">Мощный компьютер для работы, учебы и развлечений с современными характеристиками</p>
-                                <p class="product__price">85 990 ₽</p>
+                                <p class="product__price strikethrough">85 990 ₽</p>
+                                <p class="product__price"> 59 999₽ </p>
                                 <button class="product__button">В корзину</button>
                             </div>
                         </article>
-                        <article class="product__card">
+                        <article class="product__card product-card--selected">
                             <div class="product__image--container">
                                 <img class="product__image" src="../images/goods2.png" alt="Смартфон последней модели">
                             </div>
@@ -57,7 +63,7 @@
                                 <button class="product__button">В корзину</button>
                             </div>
                         </article>
-                        <article class="product__card">
+                        <article class="product__card product-card--selected">
                             <div class="product__image--container">
                                 <img class="product__image" src="../images/goods3.png" alt="Беспроводные наушники">
                             </div>
@@ -75,5 +81,15 @@
                 <p>© 2025 Интернет-магазин. Все права защищены.</p>
             </footer>    
         </div>
+        <script>
+            const themeButton = document.getElementById('theme-toggle');
+            themeButton.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            } else {
+            document.documentElement.setAttribute('data-theme', 'dark');}
+            });
+        </script>
     </body>
 </html>

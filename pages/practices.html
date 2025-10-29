@@ -3,53 +3,78 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Новости</title>
+        <title>Практика</title>
         <link rel="stylesheet" href="../style/styles.css">
     </head>
     <body>
-        <div class="page-container">
+        <div class="page">
             <header class="header">
-                <h1>Практики</h1>
+                <h1 class="header__title">Практики</h1>
             </header>
+            <button id="theme-toggle" class="theme-toggle">
+                <span class="theme-toggle__sun">☀️</span>
+                <span class="theme-toggle__moon">🌙</span>
+            </button>
             <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="news.html">Новости</a>
+                    </li>
+                    <li class="nav__item  nav__item--active">
+                        <a class="nav__link" href="practices.html">Практики</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="goods.html">Товары</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="contacts.html">Контакты</a>
+                    </li>
                 </ul>
             </nav>
-            <main class="content">
-                <h2 class="section-title">В этом разделе вы найдете подготовку к заданиям</h2>
-                <section class="practica-container">
-                    <h2 class="section-title"></h2>
-                    <article class="practica-card">
-                        <header class="practica-desc">
-                            <h2 class="practica-title">Практика 1</h2>
-                        </header>
-                        <p>Основы C# №1</p>
-                        <a href="https://yandex.ru" class="practica-desc">Задания</a>
-                    </article>
-                    <article class="practica-card">
-                        <header class="practica-desc">
-                            <h2 class="practica-title">Практика 2</h2>
-                        </header>
-                        <p>Основы C# №2</p>
-                        <a href="https://yandex.ru" class="practica-desc">Задания</a>
-                    </article>
-                    <article class="practica-card">
-                        <header class="practica-desc">
-                            <h2 class="practica-title">Практика 3</h2>
-                        </header>
-                        <p>Основы C# №3</p>
-                        <a href="https://yandex.ru" class="practica-desc">Задания</a>
-                    </article>
+            <main class="main">
+                <section class="practica">
+                    <h2 class="practica__title">В этом разделе вы найдете подготовку к заданиям</h2>
+                    <div class="practica__list">
+                        <article class="practica-item practices">
+                            <header class="practica__desc">
+                                <h3 class="practica-item__title">Практика 1</h3>
+                            </header>
+                            <p class="practica-item__text">Основы C# №1</p>
+                            <a href="https://yandex.ru" class="practica-item__link">Задания</a>
+                        </article>
+                        <article class="practica-item practices">
+                            <header class="practica__desc">
+                                <h2 class="practica-item__title">Практика 2</h2>
+                            </header>
+                            <p class="practica-item__text">Основы C# №2</p>
+                            <a href="https://yandex.ru" class="practica-item__link">Задания</a>
+                        </article>
+                        <article class="practica-item practices">
+                            <header class="practica__desc">
+                                <h2 class="practica-item__title">Практика 3</h2>
+                            </header>
+                            <p class="practica-item__text">Основы C# №3</p>
+                            <a href="https://yandex.ru" class="practica-item__link">Задания</a>
+                        </article>
+                    </div>
                 </section>
             </main>
-            <footer class="footer">
-                <p>© 2025 Практический портал. Все права защищены.</p>
-            </footer>    
         </div>
+        <script>
+        const themeButton = document.getElementById('theme-toggle');
+        themeButton.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');}
+        });
+        </script>
     </body>
+        <footer class="footer">
+            <p class="footer__text">© 2025 Практический портал. Все права защищены.</p>
+        </footer>    
 </html>
